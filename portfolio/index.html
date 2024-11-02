@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- This is where all definitions, images, css files, and scripts are referenced to this website-->
+    <!--Defines how text is encoded for this HTML document another example would be ASCII-->
+    <meta charset="UTF-8" />
+    <!--Defines the viewport of the website, however don't rely on this for multi device compatibility-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Title of Website-->
+    <title>James Ensleys Personal Portfolio</title>
+    <!--Link to Tab Icon-->
+    <link rel="shortcut icon" type="image/png" href="images/wave.png" />
+    <!--Links to CSS Files-->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/homepage.css" />
+    <link rel="stylesheet" href="css/navigationbar.css" />
+    <!--Links to Fonts-->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!--Links to Social Media Icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Contains all content of the HTML website-->
+    <!-- The general structure I want to follow is as shown below
+     Section 1 -> Home Page: Brief description of who I am and my professional interests
+     Section 2 -> About Me: More in depth description of myself, including images
+     Section 3 -> Portfolio: Section dedicated to projects and successes, linking to their own respective pages
+     Section 4 -> Contact: Includes my email, phone number and socials, maybe even make it directly send me an email from the site?
+    
+     Each of these should be made using flex boxes to make this website compatible with any device
+     and each will have its own dedicated css file to prevent confusion later on. And of course I
+     want to include a navigation bar so the user can easily click to the desired section.
+     -->
+
+    <!-- The Navigation Bar -->
+    <div class="sidebar">
+      <div class="top">
+        <div class="logo">
+          <i class="bx bxs-ghost"></i>
+          <span class="bold">James Ensley</span>
+        </div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul>
+        <li>
+          <a href="#">
+            <i class="bx bxs-home"></i>
+            <span class="nav-item">Home</span>
+          </a>
+          <span class="tooltip">Home</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bxs-user-pin"></i>
+            <span class="nav-item">About</span>
+          </a>
+          <span class="tooltip">About</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bxs-folder"></i>
+            <span class="nav-item">Portfolio</span>
+          </a>
+          <span class="tooltip">Portfolio</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bxs-phone"></i>
+            <span class="nav-item">Contact</span>
+          </a>
+          <span class="tooltip">Contact</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Section 1: Home Page-->
+    <div
+      class="home_page"
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+      "
+    >
+      <img
+        src="./blob1.gif"
+        class="blob-image"
+        alt="Background blob"
+        style="
+          position: absolute;
+          z-index: 0;
+          top: 55%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        "
+      />
+
+      <img
+        src="./blob2.gif"
+        class="blob-image"
+        alt="Background blob"
+        style="
+          position: absolute;
+          z-index: 0;
+          top: 55%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        "
+      />
+
+      <div style="margin-bottom: 100px">
+        <p class="home_text">
+          Hi, I am
+          <span class="highlight">James Ensley</span>
+        </p>
+        <p class="home_text"><span class="auto-type"></span></p>
+        <p class="home_text">
+          Extremely Interested in System
+          <span class="highlight">Optimization</span>
+        </p>
+      </div>
+
+      <!-- typing function for title page -->
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+      <script>
+        var typed = new Typed(".auto-type", {
+          strings: [
+            "Mechanical Engineering Student",
+            "Thermal Intern @ Christie Digital Systems",
+            "&nbsp; &nbsp; Mechanical Battery Pack Lead",
+            "Future Mechanical Engineer",
+          ],
+          typeSpeed: 100,
+          backSpeed: 100,
+          loop: false,
+        });
+      </script>
+      <img
+        src="images/home.jpg"
+        style="
+          border-radius: 30px;
+          max-width: 300px;
+          max-height: 300px;
+          object-fit: contain;
+          box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+          transform: translateY(-10px);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          margin-top: 10px;
+        "
+        onmouseover="this.style.transform='translateY(-20px)'; this.style.boxShadow='0 30px 40px rgba(0, 0, 0, 0.3)';"
+        onmouseout="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 30px rgba(0, 0, 0, 0.2)';"
+      />
+
+      <!-- social media icons -->
+      <div class="social-media-icons" style="margin-top: 120px">
+        <a
+          href="https://www.linkedin.com/in/james-ensley/"
+          target="_blank"
+          class="fa fa-linkedin-square"
+          style="
+            color: white;
+            font-size: 30px;
+            margin-right: 10px;
+            text-decoration: none;
+            transform: translateY(-10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          "
+          onmouseover="this.style.transform='translateY(-20px)'; this.style.boxShadow='0 30px 40px rgba(0, 0, 0, 0.3)';"
+          onmouseout="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 30px rgba(0, 0, 0, 0.2)';"
+        ></a>
+        <a
+          href="https://www.notion.so/james-ensley/James-Ensley-ed013f0a72dc4a5da8b32d1e4ab8071d"
+          target="_blank"
+          class="simple-icons--notion"
+          style="
+            font-size: 23px;
+            color: white;
+            text-decoration: none;
+            transform: translateY(-10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          "
+          onmouseover="this.style.transform='translateY(-20px)'; this.style.boxShadow='0 30px 40px rgba(0, 0, 0, 0.3)';"
+          onmouseout="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 30px rgba(0, 0, 0, 0.2)';"
+        ></a>
+        <a
+          href="https://github.com/JamesEnsley"
+          target="_blank"
+          class="fa fa-github"
+          style="
+            color: white;
+            font-size: 30px;
+            margin-left: 10px;
+            text-decoration: none;
+            transform: translateY(-10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          "
+          onmouseover="this.style.transform='translateY(-20px)'; this.style.boxShadow='0 30px 40px rgba(0, 0, 0, 0.3)';"
+          onmouseout="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 30px rgba(0, 0, 0, 0.2)';"
+        ></a>
+      </div>
+    </div>
+
+    <div class="spacer layer1"></div>
+    <div class="spacer layer2"></div>
+
+    <div class="aboutme_page">testing2</div>
+    <div class="portfolio_page">testing3</div>
+    <div class="contact_page">testing4</div>
+  </body>
+
+  <script>
+    let btn = document.querySelector("#btn");
+    let sidebar = document.querySelector(".sidebar");
+
+    btn.onclick = function () {
+      sidebar.classList.toggle("active");
+    };
+  </script>
+</html>

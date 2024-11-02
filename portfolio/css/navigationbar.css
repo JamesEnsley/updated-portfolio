@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    top: 30vh;
+    left: 0;
+    height: 320px;
+    width: 80px;
+    background-color: #12171e;
+    border-radius:10px;
+    padding: .4rem .8rem;
+    transition: width 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.sidebar.active ~ .main-content {
+    left: 250px;
+    width: calc(100% - 250px);
+}
+
+.sidebar.active {
+    width: 200px;
+}
+
+#btn {
+    position: absolute;
+    color: white;
+    top: 0.4rem;
+    left: 50%;
+    font-size: 1.2rem;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.sidebar.active #btn {
+    left: 90%;
+}
+
+/* Ensure the button is always visible */
+.sidebar #btn {
+    opacity: 1; /* Force it to be visible */
+    visibility: visible; /* Ensure it's not hidden */
+    display: block;
+    pointer-events: auto;
+}
+
+/* Optional hover effect for the button */
+.sidebar #btn:hover {
+    color: #f0f0f0; /* Slight color change on hover for visual feedback */
+}
+
+.sidebar .top .logo {
+    color: white;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateX(-150px); /* Smaller initial translation */
+    transition: transform 1s ease, opacity 0.3s ease;
+}
+
+.sidebar.active .top .logo {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.top .logo i {
+    font-size: 2rem;
+    margin-right: 5px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.sidebar ul li {
+    position: relative;
+    list-style-type: none;
+    height: 50px;
+    width: 90%;
+    margin: 0.8rem auto;
+    line-height: 50px;
+    transition: all 0.5s ease;
+    overflow: hidden; /* Prevents jumpy text overflow */
+}
+
+.sidebar ul li a {
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.8rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap; /* Prevents wrapping in collapsed state */
+    overflow: hidden;
+}
+
+.sidebar.active ul li a {
+    white-space: normal; /* Allows text to wrap when expanded */
+}
+
+.sidebar ul li a:hover {
+    background-color: white;
+    color: #12171e;
+}
+
+.sidebar ul li a i {
+    min-width: 50px;
+    text-align: center;
+    height: 50px;
+    border-radius: 12px;
+    line-height: 51px;
+}
+
+.sidebar .nav-item {
+    opacity: 0;
+    font-size: 0px;
+    transform: translateX(-30px);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.sidebar.active .nav-item {
+    opacity: 1;
+    font-size: 15px;
+    transform: translateX(0);
+}
+
+.sidebar ul li .tooltip {
+    position: fixed;
+    left: 125px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.6rem;
+    padding: 0.4rem 1.2rem;
+    line-height: 1.8rem;
+    z-index: 20;
+    display: none;
+}
+
+.sidebar ul li:hover .tooltip {
+    opacity: 0;
+}
+
+.sidebar.active ul li .tooltip {
+    opacity: 1;
+}
+

@@ -1,0 +1,53 @@
+body{
+    display:flex;
+   
+    flex-wrap: wrap;
+    background-color:#192029;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.aboutme_page{
+    height: 1080px;
+    width: 100%;
+    background-color:green;
+    font-size: 40pt;
+}
+
+.portfolio_page{
+    height: 1080px;
+    width: 100%;
+    background-color:red;
+    font-size: 40pt;
+}
+
+.contact_page{
+    height: 1080px;
+    width: 100%;
+    background-color:purple;
+    font-size: 40pt;
+}
+
+.highlight{
+    color:#46f583;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+}
+
+.spacer{
+    aspect-ratio: 960/300;
+    width:100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer1{
+    background-image: url('./layered-waves-haikei.svg')
+}
+
+.layer2{
+    background-image: url('./layered-waves-haikei-flipped.svg')
+}
